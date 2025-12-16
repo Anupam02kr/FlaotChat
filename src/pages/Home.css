@@ -1,11 +1,9 @@
-
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Inter", sans-serif;
 }
-
 
 .superior {
   width: 100%;
@@ -60,6 +58,28 @@
   transform: scale(1.1);
 }
 
+/* FIX: Chat Header Button (Down Arrow) */
+.chat-header button {
+  width: 24px;
+  height: 24px;
+  line-height: 1; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+
+  /* ✅ Material Symbols font */
+  font-family: 'Material Symbols Rounded';
+  font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  
+  /* ✅ Make arrow visible */
+  color: black;
+}
+
+
 /* Body where messages appear */
 .body {
   flex: 1; 
@@ -99,11 +119,12 @@
   align-items: flex-start;
 }
 .bot-message .message-text {
-  background-color: #E9F5FF;
+  background-color: #acd0ee;
   padding: 12px 16px;
   border-radius: 13px 13px 13px 3px;
   white-space: pre-line;
   word-wrap: break-word;
+  color: black;
 }
 .user-message {
   align-self: flex-end; 
@@ -112,24 +133,25 @@
 
 .user-message .message-text {
   background-color: #007ACC;
-  color: white; /* ✅ Make text visible on blue */
+  color: white; 
   padding: 12px 16px;
   border-radius: 13px 13px 3px 13px;
   white-space: pre-line;
   word-wrap: break-word;
 }
 
+/* --- CHAT INPUT AREA FIXES --- */
 .type-area {
   position: relative;
   bottom: 0;
   left: 0;
   right: 0;
-  height: 61.2px;
+  height: 61.2px; 
   background: #fff;
   padding: 15px 22px 20px;
   border-radius: 0 0 0 35px;
   border: 1px solid black;
-
+  flex-shrink: 0;
 }
 
 .chat-form {
@@ -139,7 +161,6 @@
   border-radius: 32px;
   width: 100%;
   padding: 0 10px;
-  /*outline: 1px solid yellow;*/
   box-shadow:0px 0px 4px #D0D7DE ;
 }
 
@@ -148,16 +169,24 @@
   border: none;
   outline: none;
   background: none;
-  height: 36px;
+  height: 36px; /* FIXED HEIGHT */
   padding: 0 10px;
   min-width: 0;
+  resize: none; 
+  color: #333333; /* FIX: Makes text visible while typing */
 }
 
+
+/* FIX: Chat Input Send Button (Up Arrow) - Fixed size to remove perceived padding */
 .chat-form button {
   background: transparent;
   border: none;
   cursor: pointer;
   font-size: 24px;
+  color: #007ACC; /* FIX: Makes the send icon visible */
+  width: 24px;   /* FIXED WIDTH (24px to match font size) */
+  height: 24px;  /* FIXED HEIGHT (24px to match font size) */
+  line-height: 1; /* Eliminates vertical space padding */
   display: none;
   flex-shrink: 0;
 }
@@ -165,39 +194,41 @@
   display: none;
 }
 .chat-form .user-input:valid ~ button {
-  display: inline-flex; 
+  /* Use display: flex to ensure the icon is centered in its small container */
+  display: flex; 
   align-items: center;
   justify-content: center;
 }
+/* --- END CHAT INPUT AREA FIXES --- */
+
 
 .dashboard {
-  flex: 1;                       
-  background-color: #FFFFFF;    
+  flex: 1; 
+  background-color: #FFFFFF; 
   border-radius: 0 35px 35px 0; 
   border-left: 1px solid black;
   max-width: 100%;
   max-height: 100%;
-  overflow: hidden;              /* Prevent overflowing children */
+  overflow: hidden; 
   display: flex;
-  flex-direction: column;       
+  flex-direction: column; 
 }
 .dashboard .data {
   display: flex;
-  flex-wrap: wrap; /* Allows the child elements to wrap inside the container */
+  flex-wrap: wrap; 
   gap: 20px;
-  
 }
 
 /* Parameter bar container */
 .parameter {
   background-color: #FFFFFF;
-  padding: 12px 0;                 /* GAP from top & bottom */
+  padding: 12px 0; 
   border: 1px solid black;
   border-radius: 0 35px 0 0;
   display: flex;
-  justify-content: center;         /* Centers scroll container horizontally */
-  align-items: center;             /* Ensures vertical alignment */
-  height: auto;                    /* Dynamic height based on padding */
+  justify-content: center; 
+  align-items: center; 
+  height: auto; 
   box-sizing: border-box;
   overflow: hidden;
   position: relative;
@@ -216,12 +247,13 @@
   align-items: center;
   gap: 20px;
   flex-wrap: nowrap;
-  min-width: max-content;         /* Ensure it doesn't wrap on smaller screens */
+  min-width: max-content; 
   padding: 0 10px;
 }
 /* Style for individual <select> */
 .parameter .data select {
   background: #FFFFFF;
+  color: #333; /* FIX: Ensures select box text is visible */
   border-radius: 8px;
   box-shadow: 0px 0px 3px #D0D7DE;
   font-weight: bold;
@@ -229,14 +261,13 @@
   border: 1px solid #ccc;
   min-width: 120px;
   white-space: nowrap;
-  flex-shrink: 0;              /* Prevent shrinking */
+  flex-shrink: 0; 
 }
 .parameter .data select option {
   white-space: nowrap;
 }
 .graph-section{
   aspect-ratio: 809/460;
-  
   display: flex;
   justify-content: center;
   align-items: center;
@@ -246,54 +277,59 @@
   aspect-ratio: 677/420;
   background-color: #D0D7DE;
 }
+
+/* --- DESIRED RESULTS BUTTONS (Original Sizing) --- */
 .desired-result{
   width:calc(809/915*100%);
   aspect-ratio: 809/61;
-  background-color: #E0E6ED;
+  background-color: #E0E6ED; /* This background color shows the gap */
   border-radius: 8px;
   display: flex;
   border: 1px solid #000000;
   margin: 0 auto;
-  
 }
 #temp,#salinity,#Oxygen{
-  width: calc(209/809*100%);
-  aspect-ratio: 209/61;
+  /* Reverted to original fixed widths */
   background-color: #007ACC;
   color: white;
   font-weight: bold;
   font-size: 0.95rem;
-
-  display: flex;                 
+  display: flex; 
   justify-content: center;
   align-items: center;
-
   cursor: pointer;
   transition: background-color 0.2s ease;
-  
+  border-color: black;
 }
 #temp{
+  width: calc(209/809*100%); /* Original width */
   border-radius: 8px 0 0 8px;
+}
+#salinity,#Oxygen{
+  width: calc(165/809*100%); /* Original width, causes the gap */
+  border-radius: 0; /* Ensures inner button is not rounded */
+}
+#Oxygen {
+  border-radius: 0 8px 8px 0;
 }
 #temp:hover,
 #salinity:hover,
 #Oxygen:hover {
   background-color: #2b8fd2;
 }
+/* --- END DESIRED RESULTS BUTTONS --- */
 
-#salinity,#Oxygen{
-  width: calc(165/809*100%);
-  aspect-ratio: 209/61;
-}
+
+/* --- DATA TABLE FIXES --- */
 .table-container{
   width: calc(843 / 915 * 100%);
-  max-height: 212px;                     /* Limit height to keep inside dashboard */
+  max-height: 212px; 
   margin: 0 auto 10px auto;
   border: 1px solid #000;
   border-radius: 10px;
   overflow-y: auto;
   background-color: #FFFFFF;
-  scrollbar-width: none;                
+  scrollbar-width: none; 
 }
 .heading{
   width:calc(843/915*100%);
@@ -307,9 +343,9 @@
   color: #8C8C8C;
 }
 .table-container table {
-  width: 100%;                             
+  width: 100%; 
   border-collapse: collapse;
-  table-layout: fixed;       
+  table-layout: fixed; 
 }
 .table-container td, .table-container th {
   padding: 8px 12px;
@@ -324,7 +360,12 @@
   top: 0;
   background-color: #007ACC;
   color: #FFFFFF;
-  z-index: 1;
+  z-index: 100; /* FIX: High Z-index to prevent data overlap */
+  min-width: 80px; 
+  width: calc(100% / 5); /* FIX: Enforce predictable column width */
+}
+.table-container thead {
+    border-bottom: 2px solid #0056a0; 
 }
 thead th:first-child {
   border-top-left-radius: 8px; 
@@ -334,4 +375,6 @@ thead th:last-child {
 }
 .table-container td{
   font-weight: bold;
+  color: #333333; /* FIX: Makes table data visible */
 }
+/* --- END DATA TABLE FIXES --- */

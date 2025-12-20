@@ -7,7 +7,7 @@ export default function Login() {
   return (
     <div className='login-container'>
       <div className='box' id='left'>
-        <form action='#' className='login-form'>
+        <form action='submit' className='login-form'>
           <img src='floatchatlogo.png' alt='FloatChat logo' className='top-logo' />
           <h2 className='page-title'>Sign in</h2>
           <p className='signup-link'>
@@ -35,15 +35,20 @@ export default function Login() {
         </div>
       </div>
       <div className='box' id='right'>
-        <div className='steps'>
-          <div className='step'>
-            <h1>1</h1>
-            <p>Step 1 description</p>
-          </div>
-          <div className='step'>
-            <h1>2</h1>
-            <p>Step 2 description</p>
-          </div>
+        <div className="first"> 
+          <p className='description'>Create Account</p>
+          <div className="first-step"><h1 className='steptodo'>1</h1></div>
+         
+        </div>
+        <div className="second">
+          <p className='description'>Select Data Sources</p>
+          <div className="second-step"><h1 className='steptodo'>2</h1></div>
+          
+        </div>
+        <div className="third">
+          <p className='description'>Get Data</p>
+          <div className="third-step"><h1 className='steptodo'>3</h1></div>
+          
         </div>
       </div>
     </div>

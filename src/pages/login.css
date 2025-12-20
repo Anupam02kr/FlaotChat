@@ -13,10 +13,7 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.container{
-  flex-direction: row;
-  border: solid 3px;
-}
+
 
 .App {
   text-align: center;
@@ -67,6 +64,7 @@ code {
   border-radius: 15px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 20px;
+  border: #282c34 solid 5px;
 }
 
 .box {
@@ -80,18 +78,28 @@ code {
   border-radius: 10px;
   margin: 10px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 5px solid black;
 }
 
 #left {
-  flex: 2;
+  flex: 1.5;
+  border: 5px solid black;
+
 }
 
 #right {
   flex: 1;
+   background-image: url('../../public/ocean.jpg');
+    background-size:100% 100%;
+    position: relative;
+     display: flex; 
+    justify-content: center;
+     align-items: center; 
+    padding: 5px;
 }
 
 .top-logo {
-  width: 120px;
+  width: 200px;
   margin-bottom: 20px;
 }
 
@@ -152,35 +160,131 @@ code {
   flex-direction: column;
   gap: 12px;
   width: auto;
-  margin-left: auto; /* push to right inside parent container */
-  align-items: flex-end;
+  /*margin-left: auto;  push to right inside parent container */
+  /* align-items: flex-end; */
 }
 .google-button, .facebook-button {
   display: flex;
+  width: 250px;
+  height: 40px;
   align-items: center;
   justify-content: center;
-  padding: 10px;
+  padding: 20px;
   border: none;
-  border-radius: 5px;
+  border-radius: 15px;
   font-size: 1rem;
   cursor: pointer;
-  transition: background-color 0.3s;
+  border:1px solid #ddd ;
+  transition: transform 0.2s,background-color 0.3s;
 }
 
 .google-button {
   background-color: #f3f4f6;
   color: #374151;
+  margin-top:20px ;
 }
 
 .google-button:hover {
-  background-color: #e5e7eb;
+  background-color: #f1f3f8;
+ transform: scale(1.05);
 }
 
 .facebook-button {
   background-color: #3b5998;
   color: #ffffff;
+  margin-top:15px ;
 }
 
 .facebook-button:hover {
   background-color: #2d4373;
+   transform: scale(1.05);
+}
+.social-logo{
+  width: 18px;
+  height: 18px;
+  margin-right: 8px;
+}
+.remember-me{
+  display: flex;
+  align-items: center;
+  color: #555;
+  gap: 8px;
+}
+.remember-me input[type='checkbox']{
+  cursor: pointer;
+}
+
+
+.first-step{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    /* centering the number in the circle*/
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+      margin-bottom:100%;
+      
+
+}
+.first-step:hover{
+    background-color: rgb(133, 6, 133);
+    transform: scale(1.1);
+}
+.second-step{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    margin-left: 5px;
+    margin-right: 5px;
+      margin-bottom: 100%;
+    
+}.second-step:hover{
+    background-color: rgb(133, 6, 133);
+    transform: scale(1.1);
+}
+.third-step{
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: white; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-left: 5px;
+    margin-right: 5px;
+    margin-bottom: 100%;
+    
+}.third-step:hover{
+    background-color:rgba(133,6,133);
+    transform: scale(1.1);
+}.steptodo{
+    font-size:xx-large;
+    font-weight: 5000;
+    margin:10px 10px 10px 10px;
+    color: black;
+}
+.first,.second,.third{
+margin-left: 10px;
+margin-right: 10px;
+/* display:block; */
+display: flex;
+flex-direction: column;
+align-items: center;
+/* gap: 15px; */
+justify-content:space-between;
+}
+.description{
+  color: black;
+  font-weight: 800;
 }

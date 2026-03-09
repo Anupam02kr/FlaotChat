@@ -1,0 +1,83 @@
+/* Page background identical to Home */
+.superior {
+  width: 100%;
+  aspect-ratio: 1440 / 1024;
+  background-color: #F4F6F9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Admin container similar to dashboard box */
+.admin-box {
+  width: calc(700 / 1440 * 100%);
+  aspect-ratio: 700 / 450;
+  background-color: #FFFFFF;
+  border-radius: 35px;
+  border: 1px solid black;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header */
+.admin-header {
+  padding: 20px;
+  border-bottom: 1px solid black;
+  border-radius: 35px 35px 0 0;
+  display: flex;
+  justify-content: center;
+}
+
+.admin-header h2 {
+  font-size: 1.6rem;
+  color: #333;
+}
+
+/* Body */
+.admin-body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding: 30px;
+}
+
+/* Description */
+.admin-desc {
+  font-size: 0.95rem;
+  color: #555;
+  text-align: center;
+  max-width: 400px;
+}
+
+/* File input */
+.admin-file {
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background: #FFFFFF;
+}
+
+/* Upload button */
+.admin-upload-btn {
+  background-color: #007ACC;
+  color: white;
+  padding: 10px 25px;
+  border-radius: 8px;
+  border: 1px solid black;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.admin-upload-btn:hover {
+  background-color: #2b8fd2;
+}
+
+/* Message */
+.admin-message {
+  font-weight: bold;
+  color: #333;
+}

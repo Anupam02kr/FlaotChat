@@ -140,7 +140,7 @@ FloatChat/
 │   │   ├── authRoutes.js
 │   │   └── dataRoutes.js
 │   │
-│   ├── controllers/              # (optional but recommended)
+│   ├── controllers/           
 │   │   └── authController.js
 │   │
 │   ├── config/
@@ -153,7 +153,7 @@ FloatChat/
 ├── ocen_edl/                     # Python RAG + ETL Backend
 │   ├── api.py                   # FastAPI entry point
 │   ├── test_rag.py              # Node bridge script
-│   ├── requirements.txt         # ✅ here
+│   ├── requirements.txt        
 │   ├── .env
 │   │
 │   ├── rag/
@@ -180,14 +180,16 @@ FloatChat/
 │   └── pipeline/
 │       └── main_pipeline.py
 │
-├── docs/                        # 📄 Supporting docs (recommended)
+├── docs/                      
 │   ├── API_DOCS.md
 │   ├── ARCHITECTURE.md
 │   ├── SETUP_GUIDE.md
 │   └── TROUBLESHOOTING.md
 │
-├── README.md                   # Main project documentation
+├── README.md                
 └── .gitignore
+
+---
 # Environment Variables
 
 Node Backend (.env)

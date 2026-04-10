@@ -107,46 +107,87 @@ Data Processing
 
 ---
 
-# Project Structure
+Project Structure
+
 
 FloatChat/
-
-frontend/
-src/
-components/
-pages/
-services/
-
-back_end/
-routes/
-server.js
-
-ocen_edl/
-api.py
-
-rag/
-rag_pipeline.py
-
-database/
-db_utils.py
-
-llm/
-sql_generator.py
-
-extract/
-extract_netcdf.py
-
-transform/
-transform_data.py
-
-load/
-load_postgres.py
-
-config/
-settings.py
-
----
-
+│
+├── frontend/                      # React App
+│   ├── src/
+│   │   ├── components/
+│   │   │   ├── Navbar.jsx
+│   │   │   ├── Footer.jsx
+│   │   │   └── ErrorBoundary.jsx
+│   │   │
+│   │   ├── pages/
+│   │   │   ├── Main.jsx
+│   │   │   ├── Home.jsx
+│   │   │   ├── Signup.jsx
+│   │   │   └── Login.jsx
+│   │   │
+│   │   ├── services/
+│   │   │   └── ragService.js
+│   │   │
+│   │   ├── App.jsx
+│   │   └── main.jsx
+│   │
+│   ├── package.json
+│   └── vite.config.js
+│
+├── back_end/                      # Node.js API Layer
+│   ├── routes/
+│   │   ├── ragRoutes.js
+│   │   ├── authRoutes.js
+│   │   └── dataRoutes.js
+│   │
+│   ├── controllers/              # (optional but recommended)
+│   │   └── authController.js
+│   │
+│   ├── config/
+│   │   └── db.js
+│   │
+│   ├── server.js
+│   ├── package.json
+│   └── .env
+│
+├── ocen_edl/                     # Python RAG + ETL Backend
+│   ├── api.py                   # FastAPI entry point
+│   ├── test_rag.py              # Node bridge script
+│   ├── requirements.txt         # ✅ here
+│   ├── .env
+│   │
+│   ├── rag/
+│   │   └── rag_pipeline.py
+│   │
+│   ├── database/
+│   │   └── db_utils.py
+│   │
+│   ├── llm/
+│   │   └── sql_generator.py
+│   │
+│   ├── extract/
+│   │   └── extract_netcdf.py
+│   │
+│   ├── transform/
+│   │   └── transform_data.py
+│   │
+│   ├── load/
+│   │   └── load_postgres.py
+│   │
+│   ├── config/
+│   │   └── settings.py
+│   │
+│   └── pipeline/
+│       └── main_pipeline.py
+│
+├── docs/                        # 📄 Supporting docs (recommended)
+│   ├── API_DOCS.md
+│   ├── ARCHITECTURE.md
+│   ├── SETUP_GUIDE.md
+│   └── TROUBLESHOOTING.md
+│
+├── README.md                   # Main project documentation
+└── .gitignore
 # Environment Variables
 
 Node Backend (.env)

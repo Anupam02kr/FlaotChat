@@ -110,9 +110,10 @@ Data Processing
 Project Structure
 
 
+```bash
 FloatChat/
 │
-├── frontend/                      # React App
+├── frontend/                     # React App
 │   ├── src/
 │   │   ├── components/
 │   │   │   ├── Navbar.jsx
@@ -134,13 +135,13 @@ FloatChat/
 │   ├── package.json
 │   └── vite.config.js
 │
-├── back_end/                      # Node.js API Layer
+├── back_end/                     # Node.js API Layer
 │   ├── routes/
 │   │   ├── ragRoutes.js
 │   │   ├── authRoutes.js
 │   │   └── dataRoutes.js
 │   │
-│   ├── controllers/           
+│   ├── controllers/
 │   │   └── authController.js
 │   │
 │   ├── config/
@@ -150,10 +151,10 @@ FloatChat/
 │   ├── package.json
 │   └── .env
 │
-├── ocen_edl/                     # Python RAG + ETL Backend
-│   ├── api.py                   # FastAPI entry point
-│   ├── test_rag.py              # Node bridge script
-│   ├── requirements.txt        
+├── ocen_edl/                    # Python RAG + ETL
+│   ├── api.py
+│   ├── test_rag.py
+│   ├── requirements.txt
 │   ├── .env
 │   │
 │   ├── rag/
@@ -180,14 +181,15 @@ FloatChat/
 │   └── pipeline/
 │       └── main_pipeline.py
 │
-├── docs/                      
+├── docs/                        # Documentation
 │   ├── API_DOCS.md
 │   ├── ARCHITECTURE.md
 │   ├── SETUP_GUIDE.md
 │   └── TROUBLESHOOTING.md
 │
-├── README.md                
+├── README.md
 └── .gitignore
+```
 
 ---
 # Environment Variables
